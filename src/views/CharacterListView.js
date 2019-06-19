@@ -9,12 +9,12 @@ class CharacterListView extends React.Component {
   }
 
   componentDidMount() {
-    // call our action
+    this,props.getSwapi
   }
 
   render() {
     if (this.props.fetching) {
-      // return something here to indicate that you are fetching data
+      <h4> Loading your request . . . . </h4>
     }
     return (
       <div className="CharactersList_wrapper">
