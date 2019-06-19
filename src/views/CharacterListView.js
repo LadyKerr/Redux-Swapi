@@ -9,7 +9,7 @@ class CharacterListView extends React.Component {
   }
 
   componentDidMount() {
-    this,props.getSwapi
+    this.props.getSwapi();
   }
 
   render() {
@@ -24,11 +24,14 @@ class CharacterListView extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  character: state.props,
-  fetching: state.props,
-  error: state.props,
-})
+const mapStateToProps = state => {
+  console.log(state)
+  return {
+  characters: state.charsReducer.characters,
+  fetching: state.charsReducer.fetching,
+  error: state.charsReducer.error,
+  }
+}
 
 export default connect (
   mapStateToProps,

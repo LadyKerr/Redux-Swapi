@@ -15,14 +15,13 @@ export const charsReducer = (state = initialState, action) => {
     case FETCHING:
       return {
         ...state,
-        error: null,
         fetching: true
       }
     case SUCCESS:
       return {
         ...state,
         fetching: false,
-        characters: action.payload
+        characters: [...state.characters, ...action.payload]
       }
     case FAILURE:
       return {
